@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link rel="stylesheet" href="./index.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Three.js Template</title>
+    </head>
+    <body>
+        <canvas class="webgl"></canvas>
+        <script type="module" src="/src/main.js"></script>
+
+        <script src="src/Detector.js"></script>
+        <script src="src/three.min.js"></script>
+        <script id="vs" type="x-shader/x-vertex">
+            varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);}
+        </script>
+
+        <script id="fs" type="x-shader/x-fragment">
+
+            uniform sampler2D map; uniform vec3 fogColor; uniform float fogNear; uniform float fogFar; varying vec2 vUv; void main() { float depth = gl_FragCoord.z / gl_FragCoord.w; float fogFactor = smoothstep( fogNear, fogFar, depth ); gl_FragColor = texture2D(
+                map, vUv ); gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 ); gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor ); }
+        </script>
+        <script src="src/index.js"></script>
+
+        <div class="all">
+            <!-- compass -->
+            <div class="container">
+                <div id="wrapper">
+                    <span class="sphere"></span>
+                    <span class="east">North</span>
+                    <span class="west">South</span>
+                    <span class="south">East</span>
+                    <span class="north">West</span>
+                    <div class="compasscontroller">
+                        <div id="indicator1"></div>
+                        <div id="indicator2" class="rotating-element"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- speedometer -->
+            <div id="speedometer-container">
+                <div class="speedometer-text">
+                    <div class="static">Speed</div>
+                    <div class="dynamic">
+                        <span class="km">0</span>
+                        <span class="unit">KMPH</span>
+                    </div>
+                </div>
+                <div class="center-point"></div>
+                <div class="speedometer-center-hide"></div>
+                <!-- <div class="speedometer-bottom-hide"></div> -->
+                <div class="arrow-container">
+                    <div class="arrow-wrapper speed-0">
+                        <div id="arrow"></div>
+                    </div>
+                </div>
+                <div class="speedometer-scale speedometer-scale-1"></div>
+                <div class="speedometer-scale speedometer-scale-2"></div>
+                <div class="speedometer-scale speedometer-scale-3"></div>
+                <div class="speedometer-scale speedometer-scale-4"></div>
+                <div class="speedometer-scale speedometer-scale-5"></div>
+                <div class="speedometer-scale speedometer-scale-6"></div>
+                <div class="speedometer-scale speedometer-scale-7"></div>
+                <div class="speedometer-scale speedometer-scale-8"></div>
+                <div class="speedometer-scale speedometer-scale-9"></div>
+                <div class="speedometer-scale speedometer-scale-10"></div>
+                <div class="speedometer-scale speedometer-scale-11"></div>
+                <div class="speedometer-scale speedometer-scale-12"></div>
+                <div class="speedometer-scale speedometer-scale-13"></div>
+                <div class="speedometer-scale speedometer-scale-14"></div>
+                <div class="speedometer-scale speedometer-scale-15"></div>
+                <div class="speedometer-scale speedometer-scale-16"></div>
+                <div class="speedometer-scale speedometer-scale-17"></div>
+                <div class="speedometer-scale speedometer-scale-18"></div>
+                <div class="speedometer-scale speedometer-scale-19"></div>
+            </div>
+            <!-- fuelmetter -->
+            <div class="gauge">
+                <div class="progress">
+                    <div class="bar"></div>
+                    <div id="needle"></div>
+                </div>
+            </div>
+        </div>
+        <!-- meters -->
+        <div class="outerbox">
+            <div class="box2">
+                <div class="label1">
+                    <span>rho:</span>
+                    <span class="rho">0</span>
+                </div>
+                <div class="label2">
+                    <span>weight_y:</span>
+                    <span class="weight_y">0</span>
+                </div>
+                <div class="label3">
+                    <span>acceleration_x:</span>
+                    <span class="acceleration_x">0</span>
+                </div>
+                <div class="label10">
+                    <span>acceleration_z:</span>
+                    <span class="acceleration_z">0</span>
+                </div>
+                <div class="label4">
+                    <span>acceleration_y:</span>
+                    <span class="acceleration_y">0</span>
+                </div>
+                <div class="label5">
+                    <span>altitude:</span>
+                    <span class="position_y">0</span>
+                </div>
+                <div class="label6">
+                    <span>position_x:</span>
+                    <span class="position_x">0</span>
+                </div>
+                <div class="label6">
+                    <span>position_z:</span>
+                    <span class="position_z">0</span>
+                </div>
+                <div class="label7">
+                    <span>velocity_x:</span>
+                    <span class="velocity_x">0</span>
+                </div>
+                <div class="label8">
+                    <span>velocity_y:</span>
+                    <span class="velocity_y">0</span>
+                </div>
+                <div class="label9">
+                    <span>velocity_z:</span>
+                    <span class="velocity_z">0</span>
+                </div>
+                <div class="label11">
+                    <span>start_eng:</span>
+                    <span class="start_eng">0</span>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box1"></div>
+            </div>
+            <button class="menu-viewer"></button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Beaver County Airport
+* source:	https://sketchfab.com/3d-models/beaver-county-airport-27a2db2ab50b4b20a53a5760ccacd09a
+* author:	Geedtopia (https://sketchfab.com/Geedtopia)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Beaver County Airport" (https://sketchfab.com/3d-models/beaver-county-airport-27a2db2ab50b4b20a53a5760ccacd09a) by Geedtopia (https://sketchfab.com/Geedtopia) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

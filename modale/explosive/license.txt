@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hydra Jet Explosion | Grand Theft Auto
+* source:	https://sketchfab.com/3d-models/hydra-jet-explosion-grand-theft-auto-f253578f3c7e4e7bbe795e820ddc5d14
+* author:	0x384c0 (https://sketchfab.com/0x384c0)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hydra Jet Explosion | Grand Theft Auto" (https://sketchfab.com/3d-models/hydra-jet-explosion-grand-theft-auto-f253578f3c7e4e7bbe795e820ddc5d14) by 0x384c0 (https://sketchfab.com/0x384c0) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

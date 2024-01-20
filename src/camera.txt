@@ -1,0 +1,236 @@
+let camera2;
+
+
+
+loader.load( '../modale/explosive/scene.gltf', function ( gltf ) {
+      gltf.scene.scale.multiplyScalar( 500 );//0.1
+      gltf.scene.rotation.y=Math.PI/2;
+      gltf.scene.position.z = 45000;
+      gltf.scene.position.y = 760;
+      gltfoo=gltf.scene;
+       camera2 = new THREE.PerspectiveCamera(
+            60,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+          );
+      gltfoo.visible = false;
+      scene.add(gltfoo)
+      
+});
+
+loader.load( '../modale/bassam2/scene.gltf', function ( gltf ) {
+  gltf.scene.scale.multiplyScalar( 1000 );//0.1
+  gltf.scene.rotation.y=Math.PI/2;
+  gltf.scene.position.z = 45000;
+  gltf.scene.position.y = 760;
+  gltfo=gltf.scene;
+  currentModel = gltfo;
+   camera2 = new THREE.PerspectiveCamera(
+        60,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+  //     if (gltfo && gltfo.position) {
+  //       camera2.position.copy(gltfo.position);
+  //       console.log("kkk")
+  //     } 
+  // camera2.position.z = 44050;
+  // camera2.position.y = 850;
+
+  camera2.rotation.y=-Math.PI/2
+  gltfo.add(camera2);
+  camera2.position.x += 0.95;
+  camera2.position.y += 1/11;
+ 
+//   pivot = new THREE.Object3D();
+//   var boxGeometry = new THREE.BoxGeometry(1/6, 5/6, 0); // Width: 5, Height: 5, Depth: 5
+//   var boxMaterial = new THREE.MeshBasicMaterial({ color: '#0E2954' }); // Red color
+// var boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
+  // var axis = new THREE.Vector3(0, 1, 0);
+  // axis.y -= 5;
+  // axis.sub(new THREE.Vector3(1, 2, 3));
+  // axis.x -=1;
+  // axis.y -= 1;
+  // var angle = THREE.Math.degToRad(90);
+  // boxMesh.rotateOnAxis(axis, 90);
+  // boxMesh.position.set(1/12, 0, 0);
+  // pivot.rotation.y = angloo;
+  // // pivot.rotation.z -= 0.9;
+  // gltfo.add(pivot);
+  // pivot.add(boxMesh)
+  // pivot.position.x-= 3.3
+  // pivot.position.y += 2/3;
+
+
+
+
+//   pivot2 = new THREE.Object3D();
+//   var boxGeometry2 = new THREE.BoxGeometry(0, 1/8, 1.6); // Width: 5, Height: 5, Depth: 5
+// var boxMaterial2 = new THREE.MeshBasicMaterial({ color: 'white' }); // Red color
+// var boxMesh2 = new THREE.Mesh(boxGeometry2, boxMaterial2);
+//   // var axis = new THREE.Vector3(0, 1, 0);
+//   // axis.y -= 5;
+//   // axis.sub(new THREE.Vector3(1, 2, 3));
+//   // axis.x -=1;
+//   // axis.y -= 1;
+//   // var angle = THREE.Math.degToRad(90);
+//   // boxMesh.rotateOnAxis(axis, 90);
+//   boxMesh2.position.set(0, 1/16, 0);
+//   pivot2.rotation.z = angloo;
+//   pivot2.rotation.x -= 0.1;
+//   pivot2.rotation.y -= 0.3;
+//   gltfo.add(pivot2);
+//   pivot2.add(boxMesh2)
+//   pivot2.position.x-= 1.2
+//   pivot2.position.z += 1.5;
+
+
+//   pivot3 = new THREE.Object3D();
+//   var boxGeometry3 = new THREE.BoxGeometry(0, 1/8, 1.6); // Width: 5, Height: 5, Depth: 5
+// var boxMaterial3 = new THREE.MeshBasicMaterial({ color: 'white' }); // Red color
+// var boxMesh3 = new THREE.Mesh(boxGeometry3, boxMaterial3);
+//   // var axis = new THREE.Vector3(0, 1, 0);
+//   // axis.y -= 5;
+//   // axis.sub(new THREE.Vector3(1, 2, 3));
+//   // axis.x -=1;
+//   // axis.y -= 1;
+//   // var angle = THREE.Math.degToRad(90);
+//   // boxMesh.rotateOnAxis(axis, 90);
+//   boxMesh3.position.set(0, 1/16, 0);
+//   pivot3.rotation.z = angloo;
+//   pivot3.rotation.x += 0.1;
+//   pivot3.rotation.y += 0.3;
+//   gltfo.add(pivot3);
+//   pivot3.add(boxMesh3)
+//   pivot3.position.x-= 1.2
+//   pivot3.position.z -= 1.5;
+
+
+
+//   pivot4 = new THREE.Object3D();
+//   var boxGeometry4 = new THREE.BoxGeometry(0, 1/16, 0.8); // Width: 5, Height: 5, Depth: 5
+//   var boxMaterial4 = new THREE.MeshBasicMaterial({ color: 'white' }); // Red color
+// var boxMesh4 = new THREE.Mesh(boxGeometry4, boxMaterial4);
+//   // var axis = new THREE.Vector3(0, 1, 0);
+//   // axis.y -= 5;
+//   // axis.sub(new THREE.Vector3(1, 2, 3));
+//   // axis.x -=1;
+//   // axis.y -= 1;
+//   // var angle = THREE.Math.degToRad(90);
+//   // boxMesh.rotateOnAxis(axis, 90);
+//   boxMesh4.position.set(0, 1/32, 0);
+//   pivot4.rotation.z = angloo;
+//   pivot4.rotation.x += 0.1;
+//   pivot4.rotation.y += 0.2;
+//   gltfo.add(pivot4);
+//   pivot4.add(boxMesh4)
+//   pivot4.position.x-= 3.33;
+//   pivot4.position.z -= 0.4;
+//   pivot4.position.y += 1/6;
+
+
+
+//   pivot5 = new THREE.Object3D();
+//   var boxGeometry5 = new THREE.BoxGeometry(0, 1/16, 0.8); // Width: 5, Height: 5, Depth: 5
+//   var boxMaterial5 = new THREE.MeshBasicMaterial({ color: 'white' }); // Red color
+// var boxMesh5 = new THREE.Mesh(boxGeometry5, boxMaterial5);
+//   // var axis = new THREE.Vector3(0, 1, 0);
+//   // axis.y -= 5;
+//   // axis.sub(new THREE.Vector3(1, 2, 3));
+//   // axis.x -=1;
+//   // axis.y -= 1;
+//   // var angle = THREE.Math.degToRad(90);
+//   // boxMesh.rotateOnAxis(axis, 90);
+//   boxMesh5.position.set(0, 1/32, 0);
+//   pivot5.rotation.z = angloo;
+//   pivot5.rotation.x -= 0.1;
+//   pivot5.rotation.y -= 0.2;
+//   gltfo.add(pivot5);
+//   pivot5.add(boxMesh5)
+//   pivot5.position.x-= 3.33;
+//   pivot5.position.z += 0.4;
+//   pivot5.position.y += 1/6;
+
+
+  scene.add(gltfo)
+  
+//       const helper = new THREE.CameraHelper( camera2 );
+// scene.add( helper )
+// scene.add( gltfo );
+// var modelBbox = new THREE.Box3().setFromObject(gltfo);
+//   var modelCenter = modelBbox.getCenter(new THREE.Vector3());
+//   gltfo.position.sub(modelCenter);
+// // Add the glTF model to the group
+// group.add(gltfo);
+// var planeBbox = new THREE.Box3().setFromObject(gltfo);
+// var planeCenter = planeBbox.getCenter(new THREE.Vector3());
+// group.position.copy(planeCenter);
+// gsap.to(gltf.scene.position,{duration:100,z:2000})
+// gsap.to(gltf.scene.position,{duration:1000,delay:1,y:200000})
+});
+
+
+
+
+
+
+
+
+window.addEventListener('resize',()=>{
+  
+      sizes.width=window.innerWidth
+      sizes.height=window.innerHeight
+      activeCamera.aspect=sizes.width/sizes.height
+      activeCamera.updateProjectionMatrix()
+      renderer.setSize(sizes.width,sizes.height)
+})   
+
+
+
+
+const camera1 = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      100000000000
+    );
+
+camera1.position.z=50000
+camera1.position.y=360
+
+let activeCamera = camera1;
+
+
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "c") {
+    toggleCamera();
+  }
+});
+
+
+
+// Function to toggle between cameras
+function toggleCamera() {
+  activeCamera = activeCamera === camera1 ? camera2 : camera1;
+}
+
+const controls = new OrbitControls(activeCamera, canvas);
+
+
+
+animate();
+function animate() {
+  requestAnimationFrame(animate);
+
+  if (activeCamera === camera1) {
+    controls.enabled = true; // Enable controls for camera1
+    controls.update();
+  } else {
+    controls.enabled = false; // Disable controls for camera2
+  }
+
+  renderer.render(scene, activeCamera);
+}

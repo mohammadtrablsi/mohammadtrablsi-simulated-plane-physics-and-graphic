@@ -1,0 +1,772 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*                        */
+    box-sizing: border-box;
+}
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+body {
+    overflow: hidden;
+    /*                        */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+}
+.progress_bar_container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#progress_bar {
+    width: 30%;
+    margin-top: 0.5%;
+    height: 2%;
+}
+label {
+    color: white;
+    font-size: 2rem;
+}
+/* #container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+  }
+  
+  #canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+   */
+/*                       */
+
+/* /////////////////////////////////////////////// */
+/* compass */
+.container {
+    position: relative;
+    /* margin-top: 250px; */
+    height: 120px;
+    width: 120px;
+    background-color: rgb(34, 48, 64);
+    border-radius: 50%;
+    border: 5px solid rgb(34, 48, 64);
+    box-shadow: 2px 2px 4px #000, -2px -2px 4px #666, 2px 2px 4px #000 inset,
+        -2px -2px 4px #666 inset;
+}
+
+.container #wrapper {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0);
+    font-size: 5px;
+}
+
+#wrapper #indicator1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* top: 50%;
+left: 50%; */
+    background: #55f;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 56% 60%, 50% 96%, 44% 60%, 50% 50%);
+    animation: anim 6s infinite linear;
+}
+
+#wrapper #indicator2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* top: 50%;
+left: 50%; */
+    background: red;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 56% 40%, 50% 4%, 44% 40%, 50% 50%);
+}
+
+/* @keyframes anim{
+100%{
+transform:translate(-50%,-50%)
+rotate(360deg)
+}
+} */
+#wrapper span {
+    position: absolute;
+    color: #fffa;
+    text-transform: capitalize;
+    font-size: 14 px;
+}
+
+#wrapper .sphere {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(0deg, #222, #777);
+    box-shadow: 0 0 3px #000;
+    z-index: 2;
+}
+#wrapper .east {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#wrapper .west {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+#wrapper .south {
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+#wrapper .north {
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+
+/* .rotating-element {
+/* transition: transform 1s; Add a transition for a smooth rotation */
+/*} */
+
+.all {
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* speedometer */
+#speedometer-container {
+    transform: scale(0.5);
+    width: 300px;
+    height: 300px;
+    border: 3px solid rgb(34, 48, 64);
+    border-radius: 50%;
+
+    position: relative;
+}
+.center-point {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 137px;
+    left: 137px;
+    z-index: 15;
+}
+.speedometer-scale {
+    width: 8px;
+    height: 280px;
+    background-color: white;
+    position: absolute;
+    left: 143px;
+    top: 7px;
+    transform: rotate(-90deg);
+}
+.speedometer-scale-1 {
+    transform: rotate(-90deg);
+}
+.speedometer-scale-2 {
+    transform: rotate(-80deg);
+}
+.speedometer-scale-3 {
+    transform: rotate(-70deg);
+}
+.speedometer-scale-4 {
+    transform: rotate(-60deg);
+}
+.speedometer-scale-5 {
+    transform: rotate(-50deg);
+}
+.speedometer-scale-6 {
+    transform: rotate(-40deg);
+}
+.speedometer-scale-7 {
+    transform: rotate(-30deg);
+}
+.speedometer-scale-8 {
+    transform: rotate(-20deg);
+}
+.speedometer-scale-9 {
+    transform: rotate(-10deg);
+}
+.speedometer-scale-10 {
+    transform: rotate(0deg);
+}
+.speedometer-scale-11 {
+    transform: rotate(10deg);
+}
+.speedometer-scale-12 {
+    transform: rotate(20deg);
+}
+.speedometer-scale-13 {
+    transform: rotate(30deg);
+}
+.speedometer-scale-14 {
+    transform: rotate(40deg);
+}
+.speedometer-scale-15 {
+    transform: rotate(50deg);
+}
+.speedometer-scale-16 {
+    transform: rotate(60deg);
+}
+.speedometer-scale-17 {
+    transform: rotate(70deg);
+}
+.speedometer-scale-18 {
+    transform: rotate(80deg);
+}
+.speedometer-scale-19 {
+    transform: rotate(90deg);
+    background: linear-gradient(to bottom, white 50%, rgb(6, 181, 6) 50%);
+}
+
+.speedometer-scale-1.active {
+    background: rgb(6, 181, 6) 50%;
+}
+.speedometer-scale-2.active {
+    background: linear-gradient(to bottom, rgb(8, 181, 8) 50%, white 50%);
+}
+.speedometer-scale-3.active {
+    background: linear-gradient(to bottom, rgb(21, 202, 21) 50%, white 50%);
+}
+.speedometer-scale-4.active {
+    background: linear-gradient(to bottom, rgb(43, 244, 43) 50%, white 50%);
+}
+.speedometer-scale-5.active {
+    background: linear-gradient(to bottom, rgb(79, 251, 79) 50%, white 50%);
+}
+.speedometer-scale-6.active {
+    background: linear-gradient(to bottom, rgb(133, 251, 79) 50%, white 50%);
+}
+.speedometer-scale-7.active {
+    background: linear-gradient(to bottom, rgb(199, 251, 79) 50%, white 50%);
+}
+.speedometer-scale-8.active {
+    background: linear-gradient(to bottom, rgb(228, 251, 79) 50%, white 50%);
+}
+.speedometer-scale-9.active {
+    background: linear-gradient(to bottom, rgb(251, 251, 79) 50%, white 50%);
+}
+.speedometer-scale-10.active {
+    background: linear-gradient(to bottom, rgb(251, 234, 79) 50%, white 50%);
+}
+.speedometer-scale-11.active {
+    background: linear-gradient(to bottom, rgb(251, 205, 79) 50%, white 50%);
+}
+.speedometer-scale-12.active {
+    background: linear-gradient(to bottom, rgb(251, 168, 79) 50%, white 50%);
+}
+.speedometer-scale-13.active {
+    background: linear-gradient(to bottom, rgb(251, 139, 79) 50%, white 50%);
+}
+.speedometer-scale-14.active {
+    background: linear-gradient(to bottom, rgb(251, 122, 79) 50%, white 50%);
+}
+.speedometer-scale-15.active {
+    background: linear-gradient(to bottom, rgb(251, 99, 79) 50%, white 50%);
+}
+.speedometer-scale-16.active {
+    background: linear-gradient(to bottom, rgb(251, 90, 79) 50%, white 50%);
+}
+.speedometer-scale-17.active {
+    background: linear-gradient(to bottom, rgb(247, 61, 47) 50%, white 50%);
+}
+.speedometer-scale-18.active {
+    background: linear-gradient(to bottom, rgb(247, 47, 47) 50%, white 50%);
+}
+.speedometer-scale-19.active {
+    background: linear-gradient(to bottom, rgb(255, 0, 0) 50%, transparent 50%);
+}
+.speedometer-center-hide {
+    width: 250px;
+    height: 250px;
+    background-color: rgb(34, 48, 64);
+    border-radius: 50%;
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    z-index: 9;
+}
+.speedometer-bottom-hide {
+    width: 320px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    z-index: 11;
+    left: -14px;
+    top: 160px;
+    border-top: 1px solid;
+}
+.arrow-container {
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: absolute;
+    z-index: 12;
+    top: 67px;
+    left: 67px;
+}
+
+.arrow-wrapper {
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.4s;
+}
+#arrow {
+    width: 220px;
+    height: 4px;
+    background: linear-gradient(to right, aqua 50%, transparent 50%);
+    position: absolute;
+    top: 78px;
+    left: -30px;
+}
+.speed-0 {
+    transform: rotate(0deg);
+}
+.speed-10 {
+    transform: rotate(10deg);
+}
+.speed-20 {
+    transform: rotate(20deg);
+}
+.speed-30 {
+    transform: rotate(30deg);
+}
+.speed-40 {
+    transform: rotate(40deg);
+}
+.speed-50 {
+    transform: rotate(50deg);
+}
+.speed-60 {
+    transform: rotate(60deg);
+}
+.speed-70 {
+    transform: rotate(70deg);
+}
+.speed-80 {
+    transform: rotate(80deg);
+}
+.speed-90 {
+    transform: rotate(90deg);
+}
+.speed-100 {
+    transform: rotate(100deg);
+}
+.speed-110 {
+    transform: rotate(110deg);
+}
+.speed-120 {
+    transform: rotate(120deg);
+}
+.speed-130 {
+    transform: rotate(130deg);
+}
+.speed-140 {
+    transform: rotate(140deg);
+}
+.speed-150 {
+    transform: rotate(150deg);
+}
+.speed-160 {
+    transform: rotate(160deg);
+}
+.speed-170 {
+    transform: rotate(170deg);
+}
+.speed-180 {
+    transform: rotate(180deg);
+}
+.accelerate-container {
+    margin-top: 120px;
+    text-align: center;
+}
+.accelerate-container button {
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: green;
+    box-shadow: 5px 5px 5px #c6c6c6;
+}
+.accelerate-container button.active {
+    box-shadow: 5px 5px 5px #ffff;
+}
+.increase {
+    background-color: green;
+}
+.decrease {
+    background-color: red;
+}
+.speedometer-text {
+    width: 180px;
+    position: absolute;
+    z-index: 20;
+    left: 58px;
+    top: 60px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.static {
+    font-size: 18px;
+}
+.dynamic {
+    margin-top: 10px;
+}
+.km {
+    font-size: 32px;
+}
+.unit {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* fuelmeter */
+
+:root {
+    --gray: rgb(34, 48, 64);
+    --blue: rgb(0, 122, 253);
+    --green: rgb(6, 215, 108);
+    --white: rgb(253, 251, 252);
+}
+
+.gauge {
+    position: relative;
+    width: 130px;
+    height: 130px;
+}
+
+.progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.1rem solid var(--white);
+    border-bottom: 0.1rem solid var(--gray);
+    border-radius: 50%;
+    outline: 0.2rem solid var(--white);
+    outline-offset: 0.4rem;
+    overflow: hidden;
+}
+
+.progress::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: var(--gray);
+    border-radius: 50%;
+    z-index: 200;
+}
+.progress::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    background-color: var(--gray);
+}
+
+.bar {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--green);
+    transform: rotate(90deg);
+    transform-origin: center right;
+    animation: rotate 2s ease-in-out;
+}
+
+#needle {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: var(--white) !important;
+    clip-path: polygon(50% 0, 50% 0, 52% 100%, 48% 100%);
+    transform: rotate(90deg);
+    transform-origin: bottom center;
+    animation: rotate 2s ease-in-out;
+    z-index: 300;
+}
+
+/* @keyframes rotate {
+0% {
+background-color: var(--blue);
+transform: rotate(-90deg);
+}
+80% { background-color: var(--blue); }
+} */
+
+.msg {
+    margin-top: 100px;
+    font: 1.3rem sans-serif;
+}
+
+.process,
+.success {
+    border-radius: 0.4rem;
+    padding: 0.8rem 1rem;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.4s ease-out;
+}
+
+.process {
+    color: var(--white);
+    border: 1.5px solid var(--white);
+}
+
+.success {
+    color: var(--green);
+    border: 1.5px solid var(--green);
+}
+
+.process.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.success.active {
+    transform: translateY(-52px);
+    opacity: 1;
+}
+.speedometer-text {
+    width: 180px;
+    position: absolute;
+    z-index: 40;
+    left: 58px;
+    top: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+.static {
+    font-size: 18px;
+}
+.dynamic {
+    margin-top: 10px;
+}
+.km {
+    font-size: 32px;
+}
+.unit {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* meters */
+.outerbox {
+    position: absolute;
+    left: 0;
+    top: -504px;
+    width: 20%;
+    height: 70%;
+    transition: all 0.3s;
+}
+.outerbox::after {
+    content: "open";
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    background-color: #1c1c1c;
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    bottom: -20px;
+    left: calc(50% - 30px);
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+}
+#box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 2;
+}
+#box::before {
+    content: "";
+    position: absolute;
+    top: -31%;
+    left: -122%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #45f3ff,
+        #45f3ff,
+        #45f3ff
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+#box::after {
+    content: "";
+    position: absolute;
+    top: -31%;
+    left: -122%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #45f3ff,
+        #45f3ff,
+        #45f3ff
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.box1 {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+.box1::before {
+    content: "";
+    position: absolute;
+    top: -31%;
+    left: -122%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #ff2270,
+        #ff2270,
+        #ff2270
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.box1::after {
+    content: "";
+    position: absolute;
+    top: -31%;
+    left: -122%;
+
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #ff2270,
+        #ff2270,
+        #ff2270
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+.box2 {
+    top: 1px;
+    left: 1px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 99%;
+    height: 99.5%;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 3;
+    flex-direction: column;
+}
+.box2 div {
+    color: white;
+    padding: 10px 15px;
+}
+.menu-viewer {
+    position: absolute;
+    bottom: 62%;
+    left: 9%;
+    height: 20px;
+    width: 60px;
+    font-size: 25px;
+    border-radius: 20px;
+
+    background-color: #252525;
+    cursor: pointer;
+}
+/* .box .menu-toggler {
+/*transform: translateX(-50px) scale(1);
+
+}*/
+/* .hidden {
+display: none;
+} */
